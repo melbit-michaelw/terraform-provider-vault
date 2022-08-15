@@ -347,6 +347,13 @@ var (
 			Resource:      UpdateSchemaResource(approleAuthBackendRoleResource()),
 			PathInventory: []string{"/auth/approle/role/{role_name}"},
 		},
+		"vault_approle_secretid": {
+			Resource: UpdateSchemaResource(approleSecretResource("vault_approle_secretid")),
+			PathInventory: []string{
+				"/auth/approle/role/{role_name}/secret-id",
+				"/auth/approle/role/{role_name}/custom-secret-id",
+			},
+		},
 		"vault_approle_auth_backend_role_secret_id": {
 			Resource: UpdateSchemaResource(approleAuthBackendRoleSecretIDResource("vault_approle_auth_backend_role_secret_id")),
 			PathInventory: []string{
